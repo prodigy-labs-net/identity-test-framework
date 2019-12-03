@@ -18,9 +18,9 @@ public class CapabilitiesGenerator {
 	
 	WebDriver driver = null;
 
-	  public static final String USERNAME = "vaishalikatta1";
-	  public static final String AUTOMATE_KEY = "exixicaC9QHJNZZWYEWn";
-	  public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+	 // public static final String USERNAME = "";
+	//  public static final String AUTOMATE_KEY = "";
+	//  public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 	
 	//private String browserType = ObjectRepository.getString("global.browser.name");
 	
