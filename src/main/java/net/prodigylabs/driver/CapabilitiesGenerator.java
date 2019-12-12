@@ -1,5 +1,3 @@
-package net.prodigylabs.driver;
-
 import java.net.URL;
 
 import org.openqa.selenium.WebDriver;
@@ -11,16 +9,13 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
-import net.prodigylabs.config.ObjectRepository;
+import IdentityTestFramework.ObjectRepository;
 
-/** @author arpitha **/
+
+
 public class CapabilitiesGenerator {
 	
 	WebDriver driver = null;
-
-	 // public static final String USERNAME = "";
-	//  public static final String AUTOMATE_KEY = "";
-	//  public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 	
 	//private String browserType = ObjectRepository.getString("global.browser.name");
 	
@@ -90,7 +85,7 @@ public class CapabilitiesGenerator {
 	{
 		switch (platformType) {
 		case "Android":
-  
+
 			DesiredCapabilities getcap = getmobileCapabilities(platformType);
 			
 			driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),getcap);
@@ -122,10 +117,10 @@ public class CapabilitiesGenerator {
 	        cap.setCapability("automationName", "UiAutomator2");
 	        cap.setCapability("platformVersion", ObjectRepository.getString("global.capability.platform.version"));
 
-	        cap.setCapability("appPackage", ObjectRepository.getString("global.capability.VerifiedMeAppPackage"));
-	        cap.setCapability("appActivity",ObjectRepository.getString("global.capability.VerifiedMeAppActivity"));
+	        cap.setCapability("appPackage", ObjectRepository.getString("global.capability.NewMeedAppPackage"));
+	        cap.setCapability("appActivity",ObjectRepository.getString("global.capability.NewMeedAppActivity"));
 
-        // cap.setCapability("app","bs://6f00f2175be1be9d969d367c992ca2a0f74e6ced");
+      // cap.setCapability("app","bs://6f00f2175be1be9d969d367c992ca2a0f74e6ced");
 	        
 	        cap.setCapability("skipUnlock","true");
 	        cap.setCapability("noReset","false");
@@ -144,4 +139,5 @@ public class CapabilitiesGenerator {
 		}		
 		return cap;
 	}
+
 }
