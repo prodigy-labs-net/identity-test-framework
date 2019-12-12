@@ -1,13 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>TestAutomationFramework</groupId>
-  <artifactId>TestAutomationFramework</artifactId>
+  <groupId>IdentityTestFramework</groupId>
+  <artifactId>IdentityTestFramework</artifactId>
   <version>v1</version>
   <packaging>jar</packaging>
 
-  <name>TestAutomationFramework</name>
+  <name>IdentityTestFramework</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -21,6 +21,7 @@
       <version>4.11</version>
     </dependency>
     
+    
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 	<dependency>
     	<groupId>org.seleniumhq.selenium</groupId>
@@ -28,12 +29,14 @@
     	<version>3.11.0</version>
 	</dependency>
 	
-	       <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+	
+       <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
 	<dependency>
     	<groupId>io.appium</groupId>
     	<artifactId>java-client</artifactId>
     	<version>7.1.0</version>
 	</dependency>
+	
 	
 	<!-- https://mvnrepository.com/artifact/commons-configuration/commons-configuration -->
 	<dependency>
@@ -70,9 +73,9 @@
     	<groupId>com.vimalselvam</groupId>
     	<artifactId>cucumber-extentsreport</artifactId>
     	<version>3.0.2</version>
-	</dependency>
-
-  </dependencies>
+		</dependency>
+		
+		 </dependencies>
   
   	<build>
 		<pluginManagement>
@@ -90,4 +93,5 @@
 		</pluginManagement>
 	</build>
 	
+
 </project>
