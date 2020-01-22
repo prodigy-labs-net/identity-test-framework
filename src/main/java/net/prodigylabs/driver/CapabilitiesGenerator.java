@@ -1,35 +1,36 @@
-import java.net.URL;
+package net.prodigylabs.driver;
 
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
+import net.prodigylabs.config.ObjectRepository;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
-import IdentityTestFramework.ObjectRepository;
+import java.net.URL;
 
 
 
 public class CapabilitiesGenerator {
-	
+
 	WebDriver driver = null;
-	
+
 	//private String browserType = ObjectRepository.getString("global.browser.name");
-	
-	
+
+
 	private CapabilitiesGenerator() {
 	}
-	
+
 	private static CapabilitiesGenerator instance = new CapabilitiesGenerator();
-	 
-	
+
+
 	public static CapabilitiesGenerator getInstance() {
 		return instance;
 	}
-	
+
 	public WebDriver launchBrowser(String browserType)
 	{
 		switch (browserType) {
@@ -46,16 +47,16 @@ public class CapabilitiesGenerator {
 			driver = new FirefoxDriver(getbrowserCapabilities(browserType));
 			break;
 		}
-		return driver;		
+		return driver;
 	}
-	
-	public static DesiredCapabilities getbrowserCapabilities(String browserType) 
+
+	public static DesiredCapabilities getbrowserCapabilities(String browserType)
 	{
-		DesiredCapabilities cap = null;		
-		
+		DesiredCapabilities cap = null;
+
 		switch (browserType) {
 		case "chrome":
-			System.setProperty("webdriver.chrome.driver",ObjectRepository.getString("global.browser.chrome.driver.executable"));
+			System.setProperty("webdriver.chrome.driver", ObjectRepository.getString("global.browser.chrome.driver.executable"));
 			cap = DesiredCapabilities.chrome();
 			cap.setCapability("platform",ObjectRepository.getString("global.browser.capability.platform"));
 			cap.setBrowserName(ObjectRepository.getString("global.browser.capability.browserName.ch"));
@@ -77,7 +78,7 @@ public class CapabilitiesGenerator {
 			cap.setCapability("platform",ObjectRepository.getString("global.browser.capability.platform"));
 			cap.setBrowserName(ObjectRepository.getString("global.browser.capability.browserName.ff"));
 			break;
-		}		
+		}
 		return cap;
 	}
 
@@ -87,32 +88,32 @@ public class CapabilitiesGenerator {
 		case "Android":
 
 			DesiredCapabilities getcap = getmobileCapabilities(platformType);
-			
+
 			driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),getcap);
 				//driver = new AndroidDriver<MobileElement>(new URL(URL),getcap);
-			
+
 			break;
 		case "iOS":
-			
+
 			driver = new IOSDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),getmobileCapabilities(platformType));
 			break;
-			
+
 		default:
-			
+
 			break;
 		}
-		return driver;		
+		return driver;
 	}
-	
-	public static DesiredCapabilities getmobileCapabilities(String platformType) 
+
+	public static DesiredCapabilities getmobileCapabilities(String platformType)
 	{
 		DesiredCapabilities cap = new DesiredCapabilities();
-		
+
 		switch (platformType) {
 		case "Android":
 	        cap.setCapability("deviceName", ObjectRepository.getString("global.capability.devicename"));
 	        cap.setCapability("udid", ObjectRepository.getString("global.capability.deviceid"));               //DeviceId from "adb devices" command
-	        
+
 	        cap.setCapability("platformName", ObjectRepository.getString("global.capability.platform"));
 	        cap.setCapability("automationName", "UiAutomator2");
 	        cap.setCapability("platformVersion", ObjectRepository.getString("global.capability.platform.version"));
@@ -121,14 +122,14 @@ public class CapabilitiesGenerator {
 	        cap.setCapability("appActivity",ObjectRepository.getString("global.capability.NewMeedAppActivity"));
 
       // cap.setCapability("app","bs://6f00f2175be1be9d969d367c992ca2a0f74e6ced");
-	        
+
 	        cap.setCapability("skipUnlock","true");
 	        cap.setCapability("noReset","false");
 	        cap.setCapability("unicodeKeyboard", true);
 	        cap.setCapability("resetKeyboard", true);
 	        cap.setCapability("autoAcceptAlerts", true);
 	   		cap.setCapability("autoDismissAlerts", true);
-	   		
+
 	   		break;
 		case "iOS":
 
@@ -136,7 +137,7 @@ public class CapabilitiesGenerator {
 		default:
 
 			break;
-		}		
+		}
 		return cap;
 	}
 
