@@ -1,7 +1,6 @@
-package net.prodigylabs.test.page.component;
+package net.prodigylabs.test.page.component.console;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;

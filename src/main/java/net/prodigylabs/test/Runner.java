@@ -8,6 +8,6 @@ public class Runner {
   public static void main(final String[] args) {
     final JUnitCore jUnitCore = new JUnitCore();
     jUnitCore.addListener(new TextListener(System.out));
-    jUnitCore.run(ConsoleSmokeTest.class);
+    jUnitCore.run(ConsoleSmokeTest.class, DacUiR13SmokeTest.class);
   }
 }

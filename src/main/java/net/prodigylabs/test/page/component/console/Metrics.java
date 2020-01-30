@@ -1,4 +1,4 @@
-package net.prodigylabs.test.page.component;
+package net.prodigylabs.test.page.component.console;
 
 import org.openqa.selenium.WebDriver;
 

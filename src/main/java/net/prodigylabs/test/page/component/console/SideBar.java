@@ -1,4 +1,4 @@
-package net.prodigylabs.test.page.component;
+package net.prodigylabs.test.page.component.console;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -22,6 +22,6 @@ public class SideBar extends PageComponent {
 
   public boolean isMetricsMenuItemActive() {
     return new WebDriverWait(getWebDriver(), 1).until(wd -> wd.findElement(By.cssSelector(SELECTOR)).findElement(By.cssSelector(".nav-item.is-active")))
-        .getText().trim().equals("Metrics");
+        .getText().trim().contains("Metrics");
   }
 }
