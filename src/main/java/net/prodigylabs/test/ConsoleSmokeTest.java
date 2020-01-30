@@ -1,8 +1,8 @@
 package net.prodigylabs.test;
 
 import net.prodigylabs.driver.provider.ChromeDriverHolder;
-import net.prodigylabs.test.page.component.Login;
-import net.prodigylabs.test.page.component.Metrics;
+import net.prodigylabs.test.page.component.console.Login;
+import net.prodigylabs.test.page.component.console.Metrics;
 import org.assertj.core.api.Assertions;
 import org.junit.After;
 import org.junit.Before;
