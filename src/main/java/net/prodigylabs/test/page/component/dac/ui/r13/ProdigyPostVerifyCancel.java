@@ -21,7 +21,7 @@ public class ProdigyPostVerifyCancel extends ProdigyPageComponent {
   }
 
   public ProdigyMain clickReturnHome() {
-    new WebDriverWait(getWebDriver(), 1).until(wd -> wd.findElement(By.cssSelector(SELECTOR)).findElement(By.cssSelector("button"))).click();
+    new WebDriverWait(getWebDriver(), 1).until(wd -> wd.findElement(By.cssSelector(SELECTOR)).findElement(By.cssSelector("button[type='button']"))).click();
 
     return new ProdigyMain(getWebDriver());
   }
