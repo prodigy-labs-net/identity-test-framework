@@ -25,7 +25,7 @@
         <htmlunit-driver.version>2.36.0</htmlunit-driver.version>
         <selenium-chrome-driver.version>3.141.59</selenium-chrome-driver.version>
 
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <assertj-core.version>3.14.0</assertj-core.version>
 
         <lombok.version>1.18.10</lombok.version>
